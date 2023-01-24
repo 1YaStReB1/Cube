@@ -35,6 +35,7 @@ const touchEnd = (event) =>{
 }
 
 const touchMove = (event) =>{
+  event.preventDefault();
   const touches = event.changedTouches;
   
 
