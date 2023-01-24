@@ -166,9 +166,9 @@ useEffect(() => {
       </div>
       { }
     </div>
-    <div className="info">
+    {/* <div className="info">
       Текущая позиция pos : {JSON.stringify(pos)} Текущий угол : {JSON.stringify(rot)} 
-    </div>
+    </div> */}
     </>
   );
 }
