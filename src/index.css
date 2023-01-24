@@ -5,9 +5,121 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(79, 77, 77);
+  /* overflow: hidden; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  position: relative;
+  margin: 200px auto;
+  width: 300px;
+  height: 300px;
+  perspective: 500px;
+}
+
+
+.content{
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+
+  transition: all 2s ease;
+  /* background-color: rgb(9, 204, 61); */
+}
+
+.content:hover{
+  /* transform: rotateX(90deg); */
+}
+
+.cube{
+  /* display: none; */
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border: 5px solid #fff;
+  font: normal 70px Arial;
+  line-height: 300px;
+  color:#fff;
+  text-align: center;
+  background-color: red;
+  box-shadow: 0 0 20px #000;
+  -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;
+
+}
+
+:root{
+  --width: 150px
+}
+
+
+
+.cube__top{
+  transform: rotateX(90deg)  translateZ(var(--width));
+}
+
+.cube__top:hover{
+  transform: rotateX(90deg)  translateZ(var(--width));
+}
+
+.cube__front{
+  transform: translateZ(var(--width));
+}
+
+.cube__left{
+  transform: rotateY(-90deg)  translateZ(var(--width));
+}
+
+.cube__right{
+  transform: rotateY(90deg)  translateZ(var(--width));
+}
+
+.cube__back{
+  transform: rotateY(180deg)  translateZ(var(--width));
+ 
+}
+
+.cube_bottom{
+  transform: rotateX(-90deg)  translateZ(var(--width));
+}
+
+.info{
+  height: 100px;
+}
+
+
+@media screen and (max-width: 600px){
+
+  .container{
+    margin: 100px auto;
+    width: 150px;
+    height: 150px;
+    
+  }
+
+  .cube{
+    font-size: 30px;
+    
+    line-height: 150px;
+    border: 2px solid #fff;
+    
+  box-shadow: 0 0 5px #000;
+  }
+
+  :root{
+    --width: 75px
+  }
 }
